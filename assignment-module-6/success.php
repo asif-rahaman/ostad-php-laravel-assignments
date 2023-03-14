@@ -10,8 +10,8 @@ $name = $_SESSION['fullname'];
 	<p class="fs-5 text-muted">Here are the details you entered:</p>
 </div>
 
-<table class="table">
-	<thead class="thead-dark">
+<table class="table table-striped table-hover align-middle text-center">
+	<thead class="table-dark">
 		<tr>
 			<th scope="col">Name</th>
 			<th scope="col">Email</th>
