@@ -1,13 +1,14 @@
 <?php
 $title = "All User Information";
 require("header.php");
+session_start();
 ?>
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
 	<h1 class="display-4 fw-normal">All User Information</h1>
 	<p class="fs-5 text-muted">All the available user information in the CSV file are shown here.</p>
 </div>
-<table class="table">
-	<thead class="thead-dark">
+<table class="table table-striped table-hover align-middle text-center">
+	<thead class="table-dark">
 		<tr>
 			<th scope="col">Name</th>
 			<th scope="col">Email</th>
@@ -16,8 +17,6 @@ require("header.php");
 	</thead>
 	<tbody>
 		<?php
-		session_start();
-
 		$file = fopen("users.csv", "r");
 
 		while (($data = fgetcsv($file)) !== FALSE) {

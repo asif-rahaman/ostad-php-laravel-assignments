@@ -1,10 +1,12 @@
 <?php
 $title = "Registration Success";
 require("header.php");
+session_start();
+$name = $_SESSION['fullname'];
 ?>
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
 	<h1 class="display-4 fw-normal">Registration Successful!</h1>
-	<p class="fs-5 text-muted">Congratulations, your registration is complete.</p>
+	<p class="fs-5 text-muted">Congratulations, <?php echo $name; ?>. Your registration is complete.</p>
 	<p class="fs-5 text-muted">Here are the details you entered:</p>
 </div>
 
@@ -18,7 +20,7 @@ require("header.php");
 	</thead>
 	<tbody>
 		<?php
-		session_start();
+
 
 		$file = fopen("users.csv", "r");
 
