@@ -18,7 +18,7 @@ Instructions:
 
 Use the employees table to answer the following questions:
 
-The foolowing Query is to  Create the database and the 'departments' and 'epmployees' tables
+--The foolowing Query is to  Create the database and the 'departments' and 'epmployees' tables
 
     CREATE DATABASE db_ostad_xyz_corp;
 
@@ -45,7 +45,7 @@ a. Write a query to select all columns and rows from the employees table.
 
 Ans:   SELECT * FROM employees;
 
-  This query selects all the data from employees table 
+  --This query selects all the data from employees table 
 
 
 b. Write a query to select only the name and salary columns of all employees with a salary greater than 50000.
@@ -55,11 +55,14 @@ Ans:
     FROM employees
     WHERE employee_salary > 50000;
 
+    --it shows employees who has salaray grater than 50000
+
 
 c. Write a query to calculate the average salary of all employees.
 
 Ans:    SELECT AVG(employee_salary) AS average_salary
         FROM employees;
+--it calculates average salary from employee_salary column and shows it
 
 
 d. Write a query to count the number of employees who work in the "Marketing" department.
@@ -69,7 +72,7 @@ Ans:    SELECT COUNT(*) AS num_employees
         WHERE department_id IN (
             SELECT department_id FROM departments WHERE department_name = 'Marketing'
         );
-
+--it selects the department_id from departments table for 'Marketing" and then counts total from employees table against it
 
 e. Write a query to update the salary column of the employee with an id of 1001 to 60000.
 
@@ -77,6 +80,7 @@ Ans:     UPDATE employees
          SET employee_salary = 60000
          WHERE employee_id = 1001;
 
+         --updates salary for the employee id 1001
 
 f. Write a query to delete all employees whose salary is less than 30000.
 
@@ -84,7 +88,7 @@ Ans:     DELETE FROM employees
          WHERE employee_salary < 30000;
 
  
-
+--Deletes All employee info where salary is less then 30000
 
 Use the departments table to answer the following questions:
 
@@ -94,12 +98,15 @@ a. Write a query to select all columns and rows from the departments table.
 Ans:    SELECT *
         FROM departments;
 
+        --shows all data from department table
 
 b. Write a query to select only the name and manager columns of the "Finance" department.
 
 Ans:    SELECT department_name, department_manager
         FROM departments
         WHERE name = 'Finance';
+
+        -- shows department name and manager fo the finance department
 
 
 c. Write a query to calculate the total number of employees in each department.
@@ -108,12 +115,12 @@ Ans:    SELECT departments.department_name, COUNT(employees.employee_id) AS tota
         FROM departments
         LEFT JOIN employees ON departments.department_id = employees.department_id
         GROUP BY departments.department_name;
-
+ --  It shows department names and total employye number by left joining 2 tables and counting the employee number by employee_id 
 
 d. Write a query to insert a new department called "Research" with a manager named "John Doe".
 
 Ans:      INSERT INTO departments (department_name, department_manager)
           VALUES ('Research', 'John Doe');
 
-
+--inserts new value in departments table
  
