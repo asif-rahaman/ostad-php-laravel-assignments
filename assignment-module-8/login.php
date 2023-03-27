@@ -1,41 +1,27 @@
 <?php
 $title = "User Registration";
 require("header.php");
+session_start();
 ?>
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
 	<h1 class="display-4 fw-normal">User Login</h1>
 </div>
 <main class="form-signin w-100 m-auto">
 	<form method="post" action="">
+	<div class="form-row">
+	<div class="col-md-12 mb-3">
 		<label>Email Address:</label><br>
-		<input type="email" name="email" required><br><br>
+		<input type="email" name="email"  class="form-control" required>
+	</div>
+	<div class="col-md-12 mb-3">
 		<label>Password:</label><br>
-		<input type="password" name="password" required><br><br>
-		<input type="submit" name="login" value="Login">
+		<input type="password" name="password"  class="form-control" required>
+	</div>
+		<input  class="btn btn-primary btn-lg" type="submit" name="login" value="Login">
+	</div>
 	</form>
 
 	<?php
-	// if(isset($_POST['login'])){
-	// 	$email = $_POST['email'];
-	// 	$password = $_POST['password'];
-
-	// 	// Validation
-	// 	if(empty($email) || empty($password)){
-	// 		echo "<p style='color:red'>Both fields are required.</p>";
-	// 	}
-	// 	else{
-	// 		// Check if email and password match in database or do something else
-	// 		// For now, just use a hardcoded value for demonstration purposes
-	// 		$valid_email = 'test@example.com';
-	// 		$valid_password = 'password';
-
-	// 		if($email == $valid_email && $password == $valid_password){
-	// 			// Successful login, redirect to welcome page with first name
-	// 			$first_name = 'John'; // Assume the first name is retrieved from the database
-	// 			header('Location: welcome.php?name='.$first_name);
-	// 			exit;
-	//      }   
-	// CSV file path
 	$file_path = 'users.csv';
 
 	if (isset($_POST['login'])) {
@@ -58,7 +44,7 @@ require("header.php");
 				// Successful login, redirect to welcome page with first name
 				$first_name = $data[0]; // Assuming the first name is in the third column
 				$_SESSION ['first_name'] = $first_name;
-				header('Location: welcome.php?name=' . $first_name);
+				header('Location: welcome.php');
 				exit;
 			} else {
 				// Invalid login, display error message
