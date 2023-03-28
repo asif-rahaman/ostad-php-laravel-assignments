@@ -1,5 +1,5 @@
 <?php
-$title = "User Registration";
+$title = "User Login";
 require("header.php");
 session_start();
 ?>
@@ -17,7 +17,9 @@ session_start();
 		<label>Password:</label><br>
 		<input type="password" name="password"  class="form-control" required>
 	</div>
+	<div class="col-md-12 mb-3 text-center">
 		<input  class="btn btn-primary btn-lg" type="submit" name="login" value="Login">
+	</div>
 	</div>
 	</form>
 
@@ -42,7 +44,7 @@ session_start();
 
 			if ($valid_login) {
 				// Successful login, redirect to welcome page with first name
-				$first_name = $data[0]; // Assuming the first name is in the third column
+				$first_name = $data[0]; 
 				$_SESSION ['first_name'] = $first_name;
 				header('Location: welcome.php');
 				exit;

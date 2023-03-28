@@ -25,11 +25,13 @@ require("header.php");
             <label>Password:</label><br>
             <input type="password" class="form-control" name="password" required>
             </div>
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12">
             <label>Confirm Password:</label><br>
             <input type="password" class="form-control" name="confirm_password" required><br>
             </div>
-            <input class="btn btn-primary btn-lg" type="submit" name="register" value="Register">
+            <div class="col-md-12 mb-3 text-center">
+             <input class="btn btn-primary btn-lg" type="submit" name="register" value="Register">
+            </div>
         </div>
     </form>
 
@@ -49,7 +51,7 @@ require("header.php");
         } elseif ($password != $confirm_password) {
             echo "<p style='color:red'>Password and confirm password do not match.</p>";
         } else {
-            // Registration successful, save to database or do something else
+            // Registration successful, save to CSV file
             $user_data = array($first_name, $last_name, $email, $password);
             $file = fopen("users.csv", "a");
             fputcsv($file, $user_data);
