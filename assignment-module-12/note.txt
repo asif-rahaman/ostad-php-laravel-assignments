@@ -1,0 +1,1 @@
+deployed live site link: https://bmi-calculator-12.netlify.app/
