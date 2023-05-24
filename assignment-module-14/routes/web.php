@@ -28,26 +28,26 @@ Route::get('/', function () {
 
 // Route::get('/hc',[HelloController::class,'greet']);
 
-//
+//Q1: UserInfo
 
 Route::post('/a14/userinfo',[UserDataController::class,'UserInfo']);
 
-// Question 2
+// Q2: UsrAgent
 Route::post('/a14/useragent',[UserDataController::class,'UserAgent']);
 
-// Question 3
+// Q3: PageApiEndpoint
 Route::get('/a14/pagequery',[UserDataController::class,'PageApiEndpoint']);
 
-// Question 4
+// Q4: FormJsonResponse
 Route::get('/a14/jresponse',[UserDataController::class,'FormJsonResponse']);
 
-// Question 5
+// Q5: FormFileUploads
 Route::post('/a14/fileupload',[UserDataController::class,'FormFileUploads']);
 
-// Question 6
+// Q6: SetCookie
 Route::post('/a14/setcookie',[UserDataController::class,'SetCookie']);
 
-// Question 7
+// Q7: Submit
 Route::post('/a14/submit',function(Request $request){
     $email = $request->input('email');
     if($email){
