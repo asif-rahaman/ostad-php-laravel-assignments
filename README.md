@@ -1,6 +1,6 @@
 # ostad-php-laravel-assignments
 
-Module-11 Submission. Please check the folder marked as "assignment-module-22"
+Please check the folder marked as "assignment-module-24"
 
 This repo is for Ostad PHP-Laravel Course Assignments
 
